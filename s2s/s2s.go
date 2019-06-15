@@ -363,6 +363,7 @@ func (st *S2S) readAndDiscard() {
 		if err != nil {
 			// TODO Maybe infinite loop here?
 			st.reconnect(true)
+			break
 		}
 		rbytes, err := st.conn.Read(tmp)
 		if err != nil {
